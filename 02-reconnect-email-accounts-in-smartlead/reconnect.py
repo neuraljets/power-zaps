@@ -14,9 +14,10 @@ STORE_KEY = "<set_your_store_key>"
 store = StoreClient(STORE_KEY)
 SMARTLEAD_API_KEY = store.get("smartlead_api_key")
 
-url = f"https://server.smartlead.ai/api/v1/email-accounts/reconnect-failed-email-accounts?api_key={SMARTLEAD_API_KEY}"
+url = f"https://server.smartlead.ai/api/v1/email-accounts/reconnect-failed-email-accounts"
 
 headers = {"accept": "application/json"}
+params = { "api_key": SMARTLEAD_API_KEY }
 
-response = requests.post(url, headers=headers)
+response = requests.post(url, params=params headers=headers)
 output['status'] = response.status_code
