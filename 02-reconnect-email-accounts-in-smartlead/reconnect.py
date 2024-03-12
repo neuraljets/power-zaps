@@ -1,4 +1,4 @@
-## POWER ZAPS by NeuralJets
+# POWER ZAPS by NeuralJets
 #
 # This script instructs Smartlead to reconnect all failed email accounts.
 #
@@ -19,5 +19,5 @@ url = f"https://server.smartlead.ai/api/v1/email-accounts/reconnect-failed-email
 headers = {"accept": "application/json"}
 params = { "api_key": SMARTLEAD_API_KEY }
 
-response = requests.post(url, params=params headers=headers)
+response = requests.post(url, params=params, headers=headers)
 output['status'] = response.status_code
