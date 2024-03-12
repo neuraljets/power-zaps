@@ -14,13 +14,6 @@ STORE_KEY = "<set-the-store-key>"
 store = StoreClient(STORE_KEY)
 SMARTLEAD_API_KEY = store.get("smartlead_api_key")
 
-url = f"https://server.smartlead.ai/api/v1/email-accounts"
-
-headers = {"accept": "application/json"}
-params = { "api_key": SMARTLEAD_API_KEY }
-
-response = requests.post(url, params=params, headers=headers)
-
 def get_store_client():
     store = StoreClient(STORE_KEY)
     return store
